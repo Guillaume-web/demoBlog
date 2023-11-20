@@ -22,11 +22,11 @@ body {
 /* FIN VARIABLES */
 
 /* STYLES COMBINÉS */
-.topbar a:hover, .sidebar a:hover {
+.topbar a:hover,
+.sidebar a:hover {
   color: var(--color-hover);
 }
 /* FIN STYLES COMBINÉS*/
-
 
 /* HEADER */
 .topbar {
@@ -127,6 +127,11 @@ main {
 /* FIN BANNIERE */
 .blog {
   margin: 40px 0 40px 0;
+}
+
+.blog h2 {
+  text-align: center;
+  font-size: 40px;
 }
 
 .blog-container {
