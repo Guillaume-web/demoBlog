@@ -40,6 +40,7 @@ body {
   left: 0;
   right: 0;
   z-index: 1000;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
 }
 
 .topbar nav {
@@ -56,8 +57,9 @@ body {
 .topbar a {
   text-decoration: none;
   color: #9f9f9f;
-  padding: 0 53px;
+  padding: 0.5rem 3rem;
   position: relative;
+  transition: color 0.3s;
 }
 
 .topbar a:active {
@@ -84,6 +86,7 @@ body {
   height: auto;
   padding: 0 12px;
   opacity: 0.5;
+  transition: opacity 0.4s;
 }
 
 .topbar-social i:hover {
@@ -118,6 +121,7 @@ main {
   background: url("/assets/img1.jpg");
   background-size: cover;
   background-position: center;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
 }
 
 .main-banner h1 {
@@ -146,6 +150,34 @@ main {
 
 .blog-container img {
   width: 308px;
+  transition: ease-in-out 0.3s;
+  animation: slideRight 2s;
+}
+
+.blog-container img:hover {
+  transform: scale(1.1);
+}
+
+@keyframes slideRight {
+  from {
+    transform: translateX(-100px);
+    opacity: 0.5;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.blog-container span {
+  position: absolute;
+  border-radius: 50%;
+  background: #000;
+  color: white;
+  font-weight: bold;
+  padding: 5px 10px;
+  transform: translate(-50%, -50%);
+  z-index: 1;
 }
 
 .blog-container .blog-content .blog-datepublication {
@@ -159,6 +191,7 @@ main {
   line-height: 41px;
   font-weight: 700;
   margin: 0;
+  text-align: left;
 }
 
 .blog-container .blog-content .blog-txt {
@@ -179,6 +212,7 @@ main {
   align-items: center;
   justify-content: center;
   background: #fbfbfb;
+  box-shadow: -4px 0 30px rgba(0, 0, 0, 0.3);
 }
 
 .sidebar-title {
@@ -189,6 +223,7 @@ main {
 .sidebar ul {
   margin: 20px 0 30px 0;
   padding: 0;
+  position: relative;
 }
 
 .sidebar li {
@@ -197,10 +232,23 @@ main {
   padding-bottom: 10px;
 }
 
+.sidebar li a::after {
+  content: attr(data-count);
+  float: right;
+  background: grey;
+  width: 25px;
+  height: 25px;
+  line-height: 25px;
+  text-align: center;
+  color: wheat;
+  border-radius: 50%;
+}
+
 .sidebar a {
   color: #9f9f9f;
   text-decoration: none;
   padding: 5px 15px;
+  transition: color 0.3s;
 }
 
 hr {
